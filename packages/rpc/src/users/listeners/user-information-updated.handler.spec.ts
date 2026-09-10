@@ -69,7 +69,7 @@ describe('UserInformationUpdatedHandler', () => {
 
     await handler.handle(event({ streetName: 'Weerdsingel', bankAccountNumber: 'NL00TEST9999999999' }));
 
-    expect(enqueue).toHaveBeenCalledTimes(3);
+    expect(enqueue).toHaveBeenCalledTimes(2);
     const types = (enqueue as jest.MockedFunction<typeof enqueue>).mock.calls.map(
       ([input]) => (input as { messageType: string }).messageType,
     );
